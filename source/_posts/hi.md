@@ -1,0 +1,58 @@
+---
+title: hi
+date: 2025-11-15 00:00:00
+tags:
+---
+
+# Hi
+总算有了一个blog，我想在此分享一些我的经历，嗯，就这样吧，Bye！
+
+算了，把[Github](https://github.com/TNTXZ "Github")抄过来吧 :)
+
+------------
+
+![TNTXZ](https://image.starsfire.top/Avatar.jpg)
+
+# Hello World! 你好，世界！
+**我是[TNTXZ](https://github.com/TNTXZ "TNTXZ")，一个猎奇的学牲党。**
+
+**I am [TNTXZ](https://github.com/TNTXZ "TNTXZ"),a mystic student.**
+
+**心中总是充满了对世界的好奇 :)**
+
+**My heart is always filled with curiosity about the world. :)**
+
+------------
+
+### 我的精神状态 ~~并不太正常~~ My State
+[![TNTXZ's GitHub stats](https://github-readme-stats.vercel.app/api?username=TNTXZ&show_icons=true&theme=merko)](https://github.com/anuraghazra/github-readme-stats)
+
+[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TNTXZ&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
+
+<div align="center">
+  <a href="https://space.bilibili.com/1515387402"><img src="https://stats.justsong.cn/api/bilibili/?id=1515387402"/></a>
+  <a href="https://blog.csdn.net/TNTXZ666?type=blog"><img src="https://stats.justsong.cn/api/csdn?id=TNTXZ666"/></a>
+</div>
+
+------------
+
+### 这是我&nbsp;&nbsp;&nbsp;It's Me
+B站 - [https://space.bilibili.com/1515387402](https://space.bilibili.com/1515387402) |
+
+X - [https://x.com/_TNTXZ_](https://x.com/_TNTXZ_) |
+
+------------
+
+### 自我介绍 Self-introduction
+从这个自述你也能看出我的~~猎奇~~（bushi），我热爱coding，既搞软件，也搞硬件（软硬兼施），会~~Chinese、English~~ Python、C++、C#、Java、JS、HTML、CSS……（~~只要会基础就算，对吧~~），What Can I Say？Man？
+这便是我。
+
+------------
+
+<h1 align="center">
+  <a href="https://github.com/TNTXZ">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=30&duration=3000&pause=500&color=00FA9A&center=true&vCenter=true&width=435&lines=%E6%B5%B7%E5%86%85%E5%AD%98%E7%9F%A5%E5%B7%B1%EF%BC%8C%E5%A4%A9%E6%B6%AF%E8%8B%A5%E6%AF%94%E9%82%BB%EF%BC%81;console.log(%22Bye!%22);print(%22Bye!%22)" alt="Typing SVG" />
+  </a>
+</h1>
+
+# Bye! 海内存知己，天涯若比邻
