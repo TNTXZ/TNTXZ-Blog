@@ -288,16 +288,149 @@ tags: [主题修改, 技术记录]
 +    z-index: -1000;
 ```
 
-### 3.4 修改效果
+### 3.4 修改本地名言获取方式
+
+**修改文件**: `themes/anzhiyu/layout/includes/loading/fullpage-loading.pug`
+
+```diff
+@@ -10,36 +10,42 @@ script.
+-  // 获取名言
+-  async function fetchQuote() {
+-    try {
+-      // 使用CORS代理或者直接请求
+-      const response = await fetch('https://uapis.cn/api/v1/saying', {
+-        method: 'GET',
+-        headers: {
+-          'Content-Type': 'application/json',
+-        },
+-        mode: 'cors'
+-      });
+-      const data = await response.json();
+-      console.log('Quote API response:', data);
+-      if (data.code === 200 && data.data) {
+-        document.querySelector('.quote-content').textContent = data.data.content;
+-        document.querySelector('.quote-author').textContent = `— ${data.data.author}`;
+-      } else {
+-        // 如果API返回错误，使用默认名言
+-        document.querySelector('.quote-content').textContent = '加载中...';
+-        document.querySelector('.quote-author').textContent = '';
+-      }
++  // 本地获取名言
++  async function fetchQuote() {
++    try {
++      // 从本地文件获取名言
++      const response = await fetch('/saying.txt');
++      const text = await response.text();
++      // 将文本按行分割，过滤空行
++      const quotes = text.split('\n').filter(quote => quote.trim() !== '');
++      
++      if (quotes.length > 0) {
++        // 随机选择一条名言
++        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
++        // 分割名言和作者
++        const quoteParts = randomQuote.split('——');
++        if (quoteParts.length === 2) {
++          document.querySelector('.quote-content').textContent = quoteParts[0].trim();
++          document.querySelector('.quote-author').textContent = `— ${quoteParts[1].trim()}`;
++        } else {
++          // 如果格式不符合预期，使用默认名言
++          document.querySelector('.quote-content').textContent = randomQuote;
++          document.querySelector('.quote-author').textContent = '';
++        }
++      } else {
++        // 如果没有名言，使用默认名言
++        document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
++        document.querySelector('.quote-author').textContent = '— 《道德经》';
++      }
+     } catch (error) {
+-      console.error('Failed to fetch quote:', error);
++      console.error('Failed to fetch local quote:', error);
+       // 加载失败时显示默认名言
+       document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
+       document.querySelector('.quote-author').textContent = '— 《道德经》';
+     }
+   }
+
+   // 初始化名言
+   fetchQuote();
+```
+
+**修改文件**: `themes/anzhiyu/layout/includes/loading/pace.pug`
+
+```diff
+@@ -8,36 +8,42 @@ script.
+-  // 获取名言
+-  async function fetchQuote() {
+-    try {
+-      // 使用CORS代理或者直接请求
+-      const response = await fetch('https://uapis.cn/api/v1/saying', {
+-        method: 'GET',
+-        headers: {
+-          'Content-Type': 'application/json',
+-        },
+-        mode: 'cors'
+-      });
+-      const data = await response.json();
+-      console.log('Quote API response:', data);
+-      if (data.code === 200 && data.data) {
+-        document.querySelector('.quote-content').textContent = data.data.content;
+-        document.querySelector('.quote-author').textContent = `— ${data.data.author}`;
+-      } else {
+-        // 如果API返回错误，使用默认名言
+-        document.querySelector('.quote-content').textContent = '加载中...';
+-        document.querySelector('.quote-author').textContent = '';
+-      }
++  // 本地获取名言
++  async function fetchQuote() {
++    try {
++      // 从本地文件获取名言
++      const response = await fetch('/saying.txt');
++      const text = await response.text();
++      // 将文本按行分割，过滤空行
++      const quotes = text.split('\n').filter(quote => quote.trim() !== '');
++      
++      if (quotes.length > 0) {
++        // 随机选择一条名言
++        const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
++        // 分割名言和作者
++        const quoteParts = randomQuote.split('——');
++        if (quoteParts.length === 2) {
++          document.querySelector('.quote-content').textContent = quoteParts[0].trim();
++          document.querySelector('.quote-author').textContent = `— ${quoteParts[1].trim()}`;
++        } else {
++          // 如果格式不符合预期，使用默认名言
++          document.querySelector('.quote-content').textContent = randomQuote;
++          document.querySelector('.quote-author').textContent = '';
++        }
++      } else {
++        // 如果没有名言，使用默认名言
++        document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
++        document.querySelector('.quote-author').textContent = '— 《道德经》';
++      }
+     } catch (error) {
+-      console.error('Failed to fetch quote:', error);
++      console.error('Failed to fetch local quote:', error);
+       // 加载失败时显示默认名言
+       document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
+       document.querySelector('.quote-author').textContent = '— 《道德经》';
+     }
+   }
+
+   // 初始化名言
+   fetchQuote();
+```
+
+### 3.5 修改效果
 
 1. 在加载页底部10-20%的位置添加了名言显示功能
-2. 名言内容从uapis.cn/api/v1/saying API获取
+2. 名言内容从本地文件`saying.txt`获取，不再依赖外部API
 3. 支持两种加载方式（fullpage和pace）
 4. 加载完成后自动隐藏名言
 5. 响应式设计，适配不同屏幕尺寸
 6. 太极图不再过早消失，会与头像同时隐藏
-7. 名言显示功能稳定，添加了CORS支持和错误处理
-8. 即使API请求失败也能显示默认名言
+7. 名言显示功能稳定，无需CORS支持
+8. 每次加载随机显示一条名言，增加了页面的多样性
+9. 即使本地文件加载失败也能显示默认名言
 
 ## 4. 修改搜索输入框样式
 
