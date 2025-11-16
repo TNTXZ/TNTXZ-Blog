@@ -50,9 +50,8 @@ X - [https://x.com/_TNTXZ_](https://x.com/_TNTXZ_) |
 ------------
 
 <h1 align="center">
-  <a href="https://github.com/TNTXZ">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=500&size=30&duration=3000&pause=500&color=00FA9A&center=true&vCenter=true&width=435&lines=%E6%B5%B7%E5%86%85%E5%AD%98%E7%9F%A5%E5%B7%B1%EF%BC%8C%E5%A4%A9%E6%B6%AF%E8%8B%A5%E6%AF%94%E9%82%BB%EF%BC%81;console.log(%22Bye!%22);print(%22Bye!%22)" alt="Typing SVG" />
-  </a>
+    <a href="https://github.com/TNTXZ" /><img src="https://image.starsfire.top/blog/2025/11/14/bye.svg" alt="Typing SVG" /></a>
 </h1>
+
 
 # Bye! 海内存知己，天涯若比邻
