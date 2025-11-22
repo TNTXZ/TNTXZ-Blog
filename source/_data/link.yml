@@ -23,9 +23,26 @@
       siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/hexo.anheyu.com.jpg
       color: vip
       tag: 技术
+    - name: Rhopaper
+      link: https://rhopaper.top/
+      avatar: https://rhopaper.top/avatar.jpg
+      descr: 同学
+      siteshot: https://rhopaper.top/avatar.jpg
+      color: red
+      tag: 同学
 
 - class_name: 小伙伴
   class_desc: 那些人，那些事
   flink_style: anzhiyu
   hundredSuffix: ""
   link_list:
+      - name: 安知鱼
+        link: https://hexo.anheyu.com/
+        avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+        descr: 生活明朗，万物可爱
+        recommend: true
+      - name: RhoPaper
+        link: https://rhopaper.top/
+        avatar: https://rhopaper.top/avatar.jpg
+        descr: 同学
+        recommend: true
