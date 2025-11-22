@@ -1,0 +1,67 @@
+- class_name: 关于页
+  subtitle: 嗯哼✨
+  avatarImg: https://image.starsfire.top/Avatar.jpg
+  avatarSkills:
+    left:
+      - 🤖️ 数码科技爱好者
+      - 🔨 设计开发一条龙
+    right:
+      - 还没想好...
+  name: TNTXZ
+  description: 是一名 工程师、学生、独立开发者、博主、UP主
+  aboutsiteTips:
+    tips: 追求
+    title1: 源于
+    title2: 热爱而去 感受
+    word:
+      - 学习
+      - 生活
+      - 程序
+      - 体验
+  helloAbout: Hello there!
+  skillsTips:
+    tips: 技能
+    title: 开启创造力
+  careers:
+    tips: 生涯
+    title: 无限进步
+    list:
+    img: https://bu.dusays.com/2023/04/21/644287166329b.png
+  statistic:
+    link: /archives
+    text: 文章隧道
+    cover: https://bu.dusays.com/2023/05/01/644f4b037b930.jpg
+  map:
+    title: 我现在住在
+    StrengthenTitle: 中国，宁波市
+    background: 
+    backgroundDark: 
+  selfInfo:
+    selfInfoTips1: 生于
+    selfInfoContentYear: 2010
+    selfInfoTips2: 。。。
+    selfInfoContent2: 。。。
+    selfInfoTips3: 现在职业
+    selfInfoContent3: 初三学生👨‍🎓
+  personalities:
+  maxim:
+    maxim_tips: 座右铭
+    maxim_top: 生活明朗，
+    maxim_bottom: 万物可爱。
+  buff:
+    buff_tips: 特长
+    buff_top: 
+    buff_bottom: 
+  game:
+  comic:
+  like:
+    like_tips: 关注偏好
+    like_title: 数码科技
+    like_bg: https://bu.dusays.com/2022/12/06/638f5f05ce1f7.jpg
+    like_bottom: 手机、电脑软硬件
+  music:
+    music_tips: 音乐偏好
+    music_title: 纯音乐、英文
+    music_bg: 
+    music_link: /music
+  reward_list:

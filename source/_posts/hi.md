@@ -30,8 +30,8 @@ tags:
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=TNTXZ&layout=compact)](https://github.com/anuraghazra/github-readme-stats)
 
 <div align="center">
-  <a href="https://space.bilibili.com/1515387402"><img src="https://stats.justsong.cn/api/bilibili/?id=1515387402"/></a>
-  <a href="https://blog.csdn.net/TNTXZ666?type=blog"><img src="https://stats.justsong.cn/api/csdn?id=TNTXZ666"/></a>
+  <img src="https://stats.justsong.cn/api/bilibili/?id=1515387402"/>
+  <img src="https://stats.justsong.cn/api/csdn?id=TNTXZ666"/>
 </div>
 
 ------------
@@ -50,7 +50,7 @@ X - [https://x.com/_TNTXZ_](https://x.com/_TNTXZ_) |
 ------------
 
 <h1 align="center">
-    <a href="https://github.com/TNTXZ" /><img src="https://image.starsfire.top/blog/2025/11/14/bye.svg" alt="Typing SVG" /></a>
+    <img src="https://image.starsfire.top/blog/2025/11/14/bye.svg" alt="Typing SVG" />
 </h1>
 
 

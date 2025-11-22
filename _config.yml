@@ -13,7 +13,7 @@ timezone: 'Asia/Shanghai'
 
 # 网址设置
 ## 在此设置您的网站网址。例如，如果使用 GitHub Page，应将 url 设置为 'https://username.github.io/project'
-url: http://example.com
+url: https://tntxz.starsfire.top/
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -101,3 +101,9 @@ theme: anzhiyu
 ## 文档：https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  template: ./search.xml
