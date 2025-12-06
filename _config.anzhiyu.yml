@@ -242,11 +242,11 @@ post_copyright:
 reward:
   enable: true
   QR_code:
-    - img: 
-      link: https://image.starsfire.top/wechat.jpg
+    - img: https://image.starsfire.top/wechat.jpg
+      link:
       text: 微信
-    - img: 
-      link: https://image.starsfire.top/alipay.jpg
+    - img: https://image.starsfire.top/alipay.jpg
+      link:
       text: 支付宝
 
 # Post edit
@@ -1122,7 +1122,7 @@ comment_barrage_config:
 nav_music:
   enable: true
   console_widescreen_music: false # 宽屏状态控制台显示音乐而不是标签 enable为true 控制台依然会显示
-  id: 8152976493
+  id: 7265922491
   server: netease
   volume: 0.7 # 默认音量
   all_playlist: https://music.163.com/#/playlist?id=7265922491

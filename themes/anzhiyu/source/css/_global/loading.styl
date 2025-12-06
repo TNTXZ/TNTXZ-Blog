@@ -48,3 +48,30 @@ if hexo-config('preloader')
     100% {
         opacity: .4;
     }
+
+  .taichi-spinner
+    position: fixed;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    z-index: 1002;
+    animation: spin 2s linear infinite;
+    background-image: url(/img/taichi.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: opacity 0.2s;
+
+  body.pace-done .taichi-spinner,
+  #loading-box.loaded ~ .taichi-spinner
+    opacity: 0;
+    z-index: -1000;
+
+  @keyframes spin
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
