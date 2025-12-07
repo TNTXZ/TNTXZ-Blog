@@ -1,0 +1,26 @@
+- class_name: 我的装备
+  description: 我的装备
+  tip: 跟 TNTXZ 一起享受科技带来的乐趣
+  top_background: https://bu.dusays.com/2023/07/05/64a4c38842b7a.webp
+  good_things:
+    - title: 我的电脑
+      description: 提升自己生产效率的硬件设备
+      equipment_list:
+        - name: 华为MateBook 14 2023
+          specification: Intel Core i5-1340P | 32GB / 1TB
+          description: 14英寸屏幕，32GB内存，1TB SSD存储，1340P处理器，核心显卡，56Wh电池。
+          image: https://consumer.huawei.com/content/dam/huawei-cbg-site/cn/mkt/pdp/laptops/matebook-14-2023/img/additions/huawei-matebook-14-2023-kv@2x.webp
+          link: https://consumer.huawei.com/cn/laptops/matebook-14-2023/
+        - name: 台式机
+          specification: Intel Core i7-6700k | 32GB | GTX1060 6GB + M40（已死亡）
+          description: 自己配的台式机，搭配Intel Core i7-6700k，内存 32GB，显卡 GTX1060 6GB + M40（已死亡）。
+          image: https://ts1.tc.mm.bing.net/th/id/R-C.29bc317d07688be6b2aee9ee370ab5e7?rik=4cGsd7vPnMQigg&riu=http%3a%2f%2fp7.qhmsg.com%2ft013827bc5301aa538e.jpg&ehk=kHyZSJS6zRMCPyM17R9DH0rVTeIcebOY2la7a5lzEks%3d&risl=&pid=ImgRaw&r=0
+          link: https://www.intel.cn/content/www/cn/zh/products/sku/88195/intel-core-i76700k-processor-8m-cache-up-to-4-20-ghz/specifications.html
+    - title: 我的服务器
+      description: 服务器
+      equipment_list:
+        - name: 服务器
+          specification: Intel Core i3-10100 | 32GB
+          description: 自己装的LJ服务器，属于是垃圾佬属性拉满了，用来跑Nas、MC服务器等。
+          image: https://image.starsfire.top/equipment/server.png
+          link: https://www.intel.cn/content/www/cn/zh/products/sku/199283/intel-core-i310100-processor-6m-cache-up-to-4-30-ghz/specifications.html

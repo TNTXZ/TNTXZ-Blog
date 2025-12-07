@@ -5,16 +5,18 @@ menu:
      标签: /tags/ || anzhiyu-icon-tags
   友链:
      友人帐: /link/ || anzhiyu-icon-link
-     朋友圈: /fcircle/ || anzhiyu-icon-artstation
+#     朋友圈: /fcircle/ || anzhiyu-icon-artstation
      留言板: /comments/ || anzhiyu-icon-envelope
   我的:
-    音乐馆: /music/ || anzhiyu-icon-music
-    追番页: /bangumis/ || anzhiyu-icon-bilibili
-    相册集: /album/ || anzhiyu-icon-images
-    小空调: /air-conditioner/ || anzhiyu-icon-fan
+#    音乐馆: /music/?id=7265922491&server=netease || anzhiyu-icon-music
+    我的装备: /equipment/ || anzhiyu-icon-dice-d20
+#    追番页: /bangumis/ || anzhiyu-icon-bilibili
+#    相册集: /album/ || anzhiyu-icon-images
+#    小空调: /air-conditioner/ || anzhiyu-icon-fan
   关于:
     关于本人: /about/ || anzhiyu-icon-paper-plane
-    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+#    闲言碎语: /essay/ || anzhiyu-icon-lightbulb
+    我的装备: /equipment/ || anzhiyu-icon-dice-d20
     随便逛逛: javascript:toRandomPost() || anzhiyu-icon-shoe-prints1
 
 # nav相关配置
@@ -456,6 +458,9 @@ footer:
       - title: email
         link: mailto:tntxz666@qq.com
         icon: anzhiyu-icon-envelope
+      - title: CC
+        link: /copyright
+        icon: anzhiyu-icon-copyright-line
       # - title: 微博
       #   link: https://weibo.com/u/6378063631
       #   icon: anzhiyu-icon-weibo
@@ -475,9 +480,7 @@ footer:
       # - title: 抖音
       #   link: https://v.douyin.com/DwCpMEy/
       #   icon: anzhiyu-icon-tiktok
-      - title: CC
-        link: /copyright
-        icon: anzhiyu-icon-copyright-line
+
   list:
     enable: false
     randomFriends: 3
@@ -553,7 +556,7 @@ footer:
 
 # Baidu Analytics
 # https://tongji.baidu.com/web/welcome/login
-baidu_analytics:
+baidu_analytics: 42d274e9e81d5c2e0c54c73e33273447
 
 # Google Analytics
 # https://analytics.google.com/analytics/web/
@@ -569,7 +572,7 @@ cloudflare_analytics: 0bc65db515f24c51bd3f60f880797aae
 
 # Microsoft Clarity
 # https://clarity.microsoft.com/
-microsoft_clarity:
+microsoft_clarity: uhm16t594u
 
 # Advertisement
 # --------------------------------------
@@ -1012,7 +1015,7 @@ pangu:
 # Lazyload (图片懒加载)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: false
+  enable: true
   field: site # site/post
   placeholder:
   blur: true
@@ -1045,7 +1048,7 @@ home_top:
   timemode: date #date/updated
   title: 生活明朗
   subTitle: 万物可爱。
-  siteText: anheyu.com
+  siteText: tntxz.starsfire.top
   category:
     - name: 软件
       path: /categories/软件开发/
@@ -1213,7 +1216,7 @@ agreementPopup:
 
 # 右键菜单
 rightClickMenu:
-  enable: false
+  enable: true
 
 # 首页随便逛逛people模式 而非技能点模式，关闭后为技能点模式需要配置creativity.yml
 peoplecanvas:
