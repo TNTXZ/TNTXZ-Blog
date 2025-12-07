@@ -595,12 +595,8 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
-  - name: google-site-verification
-    content: xxx
   - name: baidu-site-verification
-    content: code-xxx
-  - name: msvalidate.01
-    content: xxx
+    content: codeva-vTWDAGmllA
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
