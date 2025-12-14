@@ -102,12 +102,6 @@ theme: anzhiyu
 deploy:
   type: ''
 
-search:
-  path: search.xml
-  field: post
-  content: true
-  template: ./search.xml
-
 #envelope_comment
 #seehttps://akilar.top/posts/e2d3c450/
 envelope_comment:
@@ -135,3 +129,35 @@ envelope_comment:
 aplayer:
   meting: true
   asset_inject: false
+
+sitemap:
+  path: 
+    - sitemap.xml
+    - sitemap.txt
+  template: ./sitemap_template.xml
+  template_txt: ./sitemap_template.txt
+  rel: false
+  tags: true
+  categories: true
+  
+algolia:
+  appId: "9JJ5RCN2AO"
+  apiKey: "8f8a5395cf945cb6f9ddc48d4641d7e4"
+  adminApiKey: ALGOLIA_ADMIN_API_KEY
+  chunkSize: 5000
+  indexName: "hexo-blog"
+  fields:
+    - content:strip:truncate,0,200
+    - excerpt:strip
+    - gallery
+    - permalink
+    - photos
+    - slug
+    - tags
+    - title
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  template: ./search.xml
