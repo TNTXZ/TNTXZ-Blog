@@ -63,10 +63,10 @@ if hexo-config('preloader')
     background-repeat: no-repeat;
     transition: opacity 0.2s;
 
-  body.pace-done .taichi-spinner,
-  #loading-box.loaded ~ .taichi-spinner
+  body.pace-done .taichi-spinner
     opacity: 0;
     z-index: -1000;
+    animation-play-state: paused;
 
   @keyframes spin
     0% {
