@@ -13,7 +13,8 @@
     .search-wrap
       #local-search-input
         .local-search-box
-          input(placeholder=_p("search.local_search.input_placeholder") type="text").local-search-box--input
+          input(placeholder=" " type="text").local-search-box--input
+          label.form-label= _p("search.local_search.input_placeholder")
       hr
       #local-search-results
 

@@ -8,12 +8,12 @@ tags: [主题修改, 技术记录]
 
 ## 1.太极加载画面修改记录
 
-### 1.1. 添加太极图标到加载进度条下方
+### 1.1. 太极图标添加与样式设置
 
 **修改文件**: `themes/anzhiyu/source/css/_global/loading.styl`
 
 ```diff
-@@ -50,3 +50,24 @@ @keyframes loadingAction
+@@ -50,3 +50,38 @@ @keyframes loadingAction
      100% {
          opacity: .4;
      }
@@ -21,7 +21,7 @@ tags: [主题修改, 技术记录]
 +  // 添加太极图样式
 +  .taichi-spinner
 +    position: fixed;
-+    top: 30%;
++    top: 70%;
 +    left: 50%;
 +    transform: translate(-50%, -50%);
 +    width: 80px;
@@ -32,6 +32,13 @@ tags: [主题修改, 技术记录]
 +    background-size: contain;
 +    background-repeat: no-repeat;
 +    transition: opacity 0.2s;
++
++  // 加载完成时隐藏太极图
++  #loading-box.loaded .taichi-spinner,
++  body.pace-done .taichi-spinner
++    opacity: 0;
++    z-index: -1000;
++    animation-play-state: paused;
 +
 +  @keyframes spin
 +    0% {
@@ -51,55 +58,14 @@ tags: [主题修改, 技术记录]
 +.taichi-spinner
 ```
 
-### 1.2. 调整太极图标位置避免与头像重叠
+### 1.2. 修改效果
 
-**修改文件**: `themes/anzhiyu/source/css/_global/loading.styl`
-
-```diff
-@@ -54,7 +54,7 @@
- 
-   .taichi-spinner
-     position: fixed;
--    top: calc(50% + 20px);
-+    top: 70%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 80px;
-```
-
-### 1.3. 修复太极图标加载结束后继续旋转的问题
-
-**修改文件**: `themes/anzhiyu/source/css/_global/loading.styl`
-
-```diff
-@@ -66,4 +66,5 @@
-   body.pace-done .taichi-spinner,
-   #loading-box.loaded ~ .taichi-spinner
-     opacity: 0;
-     z-index: -1000;
-+    animation-play-state: paused;
-```
-
-### 1.4. 修复主题更新后太极图标只闪一下的问题
-
-**修改文件**: `themes/anzhiyu/source/css/_global/loading.styl`
-
-```diff
-@@ -66,6 +66,4 @@
-   body.pace-done .taichi-spinner,
--  #loading-box.loaded ~ .taichi-spinner
-     opacity: 0;
-     z-index: -1000;
-     animation-play-state: paused;
-```
-
-### 1.5. 修改效果
-
-1. 页面加载时，太极图标会在进度条下方居中显示
+1. 页面加载时，太极图标会在进度条下方居中显示（top: 70%位置）
 2. 太极图标以2秒为周期持续旋转
 3. 页面加载完成后，太极图标会平滑淡出并停止旋转
 4. 解决了与头像重叠的问题
 5. 解决了主题更新后只闪一下就消失的问题
+6. 太极图会与头像同时消失，保持视觉一致性
 
 ## 2. 将网站中md的代码展示字体改为Convergence
 
@@ -119,7 +85,7 @@ tags: [主题修改, 技术记录]
 @@ -18,8 +18,14 @@ $theme-toc-color = $themeColorEnable && hexo-config('theme_color.toc_color') ? c
  
  // font
-+$@font-face
++@font-face
 +  font-family 'Convergence'
 +  src url('/fonts/Convergence.ttf') format('truetype')
 +  font-weight normal
@@ -332,3 +298,139 @@ tags: [主题修改, 技术记录]
 6. 太极图不再过早消失，会与头像同时隐藏
 7. 名言显示功能稳定，添加了CORS支持和错误处理
 8. 即使API请求失败也能显示默认名言
+
+## 4. 修改搜索输入框样式
+
+### 4.1 实现搜索框浮动标签效果
+
+**修改文件**: `themes/anzhiyu/source/css/_search/algolia.styl`
+
+```diff
+@@ -3,14 +3,46 @@
+     .ais-SearchBox
+-      input
+-        padding: .5rem 1rem
++      position: relative
++      margin: 0 auto
++      max-width: 100%
++      width: 100%
++
++      input
++        padding: 5px 14px
+         width: 100%
+         outline: none
+-        border: var(--style-border)
+-        border-radius: var(--anzhiyu-radius)
+-        background: var(--anzhiyu-secondbg)
+-        color: var(--search-input-color)
+-        &:focus
+-          border: var(--style-border-hover)
++        border: 2px solid $search-color
++        border-radius: 40px
++        background: var(--search-bg)
++        color: var(--search-input-color)
++        -webkit-appearance: none
++        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
++        &:focus,
++        &:not(:placeholder-shown)
++          border-color: #2196f3
++          box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1)
++      
++      .form-label
++        position: absolute
++        left: 18px
++        top: 50%
++        transform: translateY(-50%)
++        color: var(--search-input-color)
++        font-size: 14px
++        pointer-events: none
++        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
++        background-color: transparent
++        padding: 0
++        white-space: nowrap
++        opacity: 0.7
++      
++      input:focus + .form-label,
++      input:not(:placeholder-shown) + .form-label
++        transform: translateY(-100%) scale(0.8)
++        top: 5px
++        color: #2196f3
++        font-weight: 500
++        opacity: 1
+```
+
+**修改文件**: `themes/anzhiyu/source/css/_search/local-search.styl`
+
+```diff
+@@ -1,17 +1,41 @@
+ #local-search
+   .search-dialog
+     .local-search-box
+       margin: 0 auto
+       max-width: 100%
+       width: 100%
++      position: relative
+
+       input
+         padding: 5px 14px
+         width: 100%
+         outline: none
+         border: 2px solid $search-color
++        border-radius: 40px
+         background: var(--search-bg)
+         color: var(--search-input-color)
++        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+         -webkit-appearance: none
++        &:focus,
++        &:not(:placeholder-shown)
++          border-color: #2196f3
++          box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1)
++      
++      .form-label
++        position: absolute
++        left: 18px
++        top: 50%
++        transform: translateY(-50%)
++        color: var(--search-input-color)
++        font-size: 14px
++        pointer-events: none
++        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
++        background-color: transparent
++        padding: 0
++        white-space: nowrap
++        opacity: 0.7
++      
++      input:focus + .form-label,
++      input:not(:placeholder-shown) + .form-label
++        transform: translateY(-100%) scale(0.8)
++        top: 5px
++        color: #2196f3
++        font-weight: 500
++        opacity: 1
+```
+
+**修改文件**: `themes/anzhiyu/layout/includes/third-party/search/local-search.pug`
+
+```diff
+@@ -14,7 +14,7 @@
+
+     .search-wrap
+       #local-search-input
+         .local-search-box
+-          input(placeholder=_p("search.local_search.input_placeholder") type="text").local-search-box--input
++          input(placeholder=" " type="text").local-search-box--input
++          label.form-label= _p("search.local_search.input_placeholder")
+       hr
+       #local-search-results
+```
+
+### 4.2 修改效果
+
+1. 保持了原有的输入框大小，对不同屏幕做了适配
+2. 本地搜索输入框实现了文字上浮功能
+3. 输入框聚焦或有内容时，标签会上浮到输入框上方
+4. 应用了平滑的过渡动画，提升用户体验
+5. 保持了原有的响应式设计，适配不同屏幕尺寸
+6. 增强了输入框的视觉反馈，聚焦时显示蓝色边框和阴影
+
+这些修改提升了网站的搜索体验，使搜索输入框更加现代化、美观，同时保持了良好的可用性和响应式设计。

@@ -1,16 +1,47 @@
 #algolia-search
   .search-dialog
     .ais-SearchBox
+      position: relative
+      margin: 0 auto
+      max-width: 100%
+      width: 100%
+      
       input
-        padding: .5rem 1rem
+        padding: 5px 14px
         width: 100%
         outline: none
-        border: var(--style-border)
-        border-radius: var(--anzhiyu-radius)
-        background: var(--anzhiyu-secondbg)
+        border: 2px solid $search-color
+        border-radius: 40px
+        background: var(--search-bg)
         color: var(--search-input-color)
-        &:focus
-          border: var(--style-border-hover)
+        -webkit-appearance: none
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+        &:focus,
+        &:not(:placeholder-shown)
+          border-color: #2196f3
+          box-shadow: 0 0 0 4px rgba(33, 150, 243, 0.1)
+      
+      .form-label
+        position: absolute
+        left: 18px
+        top: 50%
+        transform: translateY(-50%)
+        color: var(--search-input-color)
+        font-size: 14px
+        pointer-events: none
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+        background-color: transparent
+        padding: 0
+        white-space: nowrap
+        opacity: 0.7
+      
+      input:focus + .form-label,
+      input:not(:placeholder-shown) + .form-label
+        transform: translateY(-100%) scale(0.8)
+        top: 5px
+        color: #2196f3
+        font-weight: 500
+        opacity: 1
     .search-dialog-title
       font-weight: 700;
       color: var(--anzhiyu-main);
