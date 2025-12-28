@@ -63,6 +63,8 @@ if hexo-config('preloader')
     background-repeat: no-repeat;
     transition: opacity 0.2s;
 
+  // 加载完成时隐藏太极图
+  #loading-box.loaded .taichi-spinner,
   body.pace-done .taichi-spinner
     opacity: 0;
     z-index: -1000;
@@ -75,3 +77,33 @@ if hexo-config('preloader')
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
     }
+
+  // 名言样式
+  .loading-quote
+    position: fixed;
+    bottom: 15%; // 底部10-20%的位置
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    z-index: 1002;
+    text-align: center;
+    transition: opacity 0.2s;
+    
+    .quote-content
+      font-size: 18px;
+      font-weight: 500;
+      color: var(--anzhiyu-fontcolor);
+      margin-bottom: 8px;
+      line-height: 1.6;
+      
+    .quote-author
+      font-size: 14px;
+      color: var(--anzhiyu-fontcolor);
+      opacity: 0.8;
+
+  // 加载完成时隐藏名言
+  #loading-box.loaded .loading-quote,
+  body.pace-done .loading-quote
+    opacity: 0;
+    z-index: -1000;

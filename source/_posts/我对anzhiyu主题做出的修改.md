@@ -154,3 +154,181 @@ tags: [主题修改, 技术记录]
 1. 网站中所有Markdown代码块的字体已改为Convergence
 2. 字体文件已添加到主题资源目录
 3. 配置文件已更新，确保Convergence字体作为代码字体首选
+
+## 3. 在加载页底部添加名言显示
+
+### 3.1 修改fullpage-loading.pug文件
+
+**修改文件**: `themes/anzhiyu/layout/includes/loading/fullpage-loading.pug`
+
+```diff
+@@ -1,17 +1,43 @@
+ - loading_img = theme.preloader.avatar ? theme.preloader.avatar : theme.avatar.img
+ #loading-box(onclick='document.getElementById("loading-box").classList.add("loaded")')
+   .loading-bg
+     img.loading-img(alt="加载头像" class='nolazyload' src=url_for(loading_img))
+     .loading-image-dot
++  .loading-quote
++    .quote-content
++    .quote-author
+ script.
++  // 获取名言
++  async function fetchQuote() {
++    try {
++      // 使用CORS代理或者直接请求
++      const response = await fetch('https://uapis.cn/api/v1/saying', {
++        method: 'GET',
++        headers: {
++          'Content-Type': 'application/json',
++        },
++        mode: 'cors'
++      });
++      const data = await response.json();
++      console.log('Quote API response:', data);
++      if (data.code === 200 && data.data) {
++        document.querySelector('.quote-content').textContent = data.data.content;
++        document.querySelector('.quote-author').textContent = `— ${data.data.author}`;
++      } else {
++        // 如果API返回错误，使用默认名言
++        document.querySelector('.quote-content').textContent = '加载中...';
++        document.querySelector('.quote-author').textContent = '';
++      }
++    } catch (error) {
++      console.error('Failed to fetch quote:', error);
++      // 加载失败时显示默认名言
++      document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
++      document.querySelector('.quote-author').textContent = '— 《道德经》';
++    }
++  }
++
++  // 初始化名言
++  fetchQuote();
++  
+   const preloader = {
+     endLoading: () => {
+       document.getElementById('loading-box').classList.add("loaded");
+     },
+     initLoading: () => {
+       document.getElementById('loading-box').classList.remove("loaded")
+     }
+   }
+   window.addEventListener('load',()=> { preloader.endLoading() })
+   setTimeout(function(){preloader.endLoading();},10000)
+
+   if (!{theme.pjax && theme.pjax.enable}) {
+     document.addEventListener('pjax:send', () => { preloader.initLoading() })
+     document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+   }
+```
+
+### 3.2 修改pace.pug文件
+
+**修改文件**: `themes/anzhiyu/layout/includes/loading/pace.pug`
+
+```diff
+@@ -1,3 +1,25 @@
+ link(rel="stylesheet", href=url_for(theme.preloader.pace_css_url || theme.asset.pace_default_css))
+ script(async src=url_for(theme.asset.pace_js), data-pace-options='{ "restartOnRequestAfter":false,"eventLag":false}')
+ .taichi-spinner
++.loading-quote
++  .quote-content
++  .quote-author
++script.
++  // 获取名言
++  async function fetchQuote() {
++    try {
++      // 使用CORS代理或者直接请求
++      const response = await fetch('https://uapis.cn/api/v1/saying', {
++        method: 'GET',
++        headers: {
++          'Content-Type': 'application/json',
++        },
++        mode: 'cors'
++      });
++      const data = await response.json();
++      console.log('Quote API response:', data);
++      if (data.code === 200 && data.data) {
++        document.querySelector('.quote-content').textContent = data.data.content;
++        document.querySelector('.quote-author').textContent = `— ${data.data.author}`;
++      } else {
++        // 如果API返回错误，使用默认名言
++        document.querySelector('.quote-content').textContent = '加载中...';
++        document.querySelector('.quote-author').textContent = '';
++      }
++    } catch (error) {
++      console.error('Failed to fetch quote:', error);
++      // 加载失败时显示默认名言
++      document.querySelector('.quote-content').textContent = '道可道，非常道；名可名，非常名。';
++      document.querySelector('.quote-author').textContent = '— 《道德经》';
++    }
++  }
++
++  // 初始化名言
++  fetchQuote();
+```
+
+### 3.3 修改loading.styl文件
+
+**修改文件**: `themes/anzhiyu/source/css/_global/loading.styl`
+
+```diff
+@@ -64,7 +64,9 @@
+     background-repeat: no-repeat;
+     transition: opacity 0.2s;
+
+-  body.pace-done .taichi-spinner
++  // 加载完成时隐藏太极图
++  #loading-box.loaded .taichi-spinner,
++  body.pace-done .taichi-spinner
+     opacity: 0;
+     z-index: -1000;
+     animation-play-state: paused;
+@@ -71,3 +73,31 @@
+     0% {
+         transform: translate(-50%, -50%) rotate(0deg);
+     }
+     100% {
+         transform: translate(-50%, -50%) rotate(360deg);
+     }
++
++  // 名言样式
++  .loading-quote
++    position: fixed;
++    bottom: 15%; // 底部10-20%的位置
++    left: 50%;
++    transform: translateX(-50%);
++    width: 80%;
++    max-width: 800px;
++    z-index: 1002;
++    text-align: center;
++    transition: opacity 0.2s;
++    
++    .quote-content
++      font-size: 18px;
++      font-weight: 500;
++      color: var(--anzhiyu-fontcolor);
++      margin-bottom: 8px;
++      line-height: 1.6;
++      
++    .quote-author
++      font-size: 14px;
++      color: var(--anzhiyu-fontcolor);
++      opacity: 0.8;
++
++  // 加载完成时隐藏名言
++  #loading-box.loaded .loading-quote,
++  body.pace-done .loading-quote
++    opacity: 0;
++    z-index: -1000;
+```
+
+### 3.4 修改效果
+
+1. 在加载页底部10-20%的位置添加了名言显示功能
+2. 名言内容从uapis.cn/api/v1/saying API获取
+3. 支持两种加载方式（fullpage和pace）
+4. 加载完成后自动隐藏名言
+5. 响应式设计，适配不同屏幕尺寸
+6. 太极图不再过早消失，会与头像同时隐藏
+7. 名言显示功能稳定，添加了CORS支持和错误处理
+8. 即使API请求失败也能显示默认名言
