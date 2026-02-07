@@ -5,7 +5,7 @@ tags: [推荐]
 cover: https://image.starsfire.top/blog/2025/11/16/051b9c40fdd8df95c9a6357fc0233329.png
 ---
 
-# Typora：一款接近完美的Markdown编辑器
+# [Typora](https://typora.io/)：一款接近完美的Markdown编辑器
 
 ## 什么是Typora？
 
@@ -69,3 +69,5 @@ Typora在2021年11月开始收费，价格为89元/三台电脑，买断一个�
 Typora是一款功能强大、使用便捷的Markdown编辑器，它的所见即所得编辑模式、丰富的语法支持和简洁的界面设计使其成为Markdown编辑工具中的佼佼者。无论是专业的技术文档编写，还是日常的笔记记录，Typora都能满足用户的需求，为用户提供一种愉悦的写作体验。
 
 如果你是一位经常使用Markdown的用户，不妨尝试一下Typora，相信它会成为你的得力助手。
+
+（其实我的这篇文章也是用Typora写的...）
