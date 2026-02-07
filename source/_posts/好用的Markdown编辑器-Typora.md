@@ -2,7 +2,7 @@
 title: 好用的Markdown编辑器-Typora
 date: 2026-11-16 14:49:52
 tags: [推荐]
-cover: https://img-blog.csdnimg.cn/img_convert/051b9c40fdd8df95c9a6357fc0233329.png
+cover: https://image.starsfire.top/blog/2025/11/16/051b9c40fdd8df95c9a6357fc0233329.png
 ---
 
 # Typora：一款接近完美的Markdown编辑器
