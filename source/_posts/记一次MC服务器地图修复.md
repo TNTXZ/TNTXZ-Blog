@@ -1,5 +1,5 @@
 ---
-title: 记一次MC服务器地图修复
+title: 记一次MC服务器地图修复-CustomWorldHeight
 date: 2025-11-15 13:39:34
 tags: [MC,MC服务器]
 cover: https://image.starsfire.top/blog/2025/11/15/wallpaper_minecraft_bedrock_edition_800x450%20.png
@@ -50,9 +50,28 @@ java.io.EOFException: null
 
 然后成功了~
 
+# 总结方法：
+
+1.打开Chunker
+
+2.选择存档文件夹
+
+![](https://image.starsfire.top/blog/2025/11/15/1.png)
+
+3.选择高出存档版本的版本（如选择低版本可能丢失一些方块）
+
+![](https://image.starsfire.top/blog/2025/11/15/2.png)
+
+3.点击转换
+
+![](https://image.starsfire.top/blog/2025/11/15/3.png)
+
+4.完事！将转换完的存档放回服务器中测试！
+
 # 结语：
 
 对，就这么简单，结果弯弯绕绕花了我3个周末，此修复过程有部分省略，只保留了当时的主体故事。
 
 这告诉我们一个道理：做一些危险事情之前一定要做好<u>备份</u>！！！
 
+希望这篇文章能够帮助到你。
