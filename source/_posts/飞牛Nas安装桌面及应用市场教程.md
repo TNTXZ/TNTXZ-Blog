@@ -9,7 +9,7 @@ cover: https://image.starsfire.top/blog/2026/2/8/cover.png
 
 当我们装完飞牛后看着这个画面是不是非常难受，于是主包准备给他装个桌面。
 
-![飞牛初始界面](https://image.starsfire.top/blog/2026/2/8/0.png)
+![飞牛初始界面](https://image.starsfire.top/blog/2026/2/8/0.jpg)
 
 ## 安装肉桂桌面
 
@@ -102,7 +102,7 @@ reboot
 
 ok了，登上nas设置的号：
 
-![登录桌面](https://image.starsfire.top/blog/2026/2/8/11.png)
+![登录桌面](https://image.starsfire.top/blog/2026/2/8/11.jpg)
 
 ## 安装应用市场
 
@@ -151,7 +151,7 @@ dpkg -i /home/<用户名>/<星火应用市场>.deb
 
 菜单中可以找到星火应用市场，打开，大功告成，然后安装你想要的软件吧：
 
-![打开应用市场](https://image.starsfire.top/blog/2026/2/8/16.png)
+![打开应用市场](https://image.starsfire.top/blog/2026/2/8/16.jpg)
 
 ## 总结
 
