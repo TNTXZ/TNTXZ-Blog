@@ -153,6 +153,14 @@ dpkg -i /home/<用户名>/<星火应用市场>.deb
 
 ![打开应用市场](https://image.starsfire.top/blog/2026/2/8/16.jpg)
 
+## 一键安装脚本
+
+为了方便用户，我写了一个一键安装脚本，只需一行代码即可完成所有安装步骤：
+
+```bash
+wget -O install.sh https://image.starsfire.top/blog/2026/2/8/install.sh && chmod +x install.sh && sudo bash install.sh
+```
+
 ## 总结
 
 通过以上步骤，我们成功为飞牛Nas安装了肉桂桌面和星火应用市场，让NAS的使用体验更加友好。肉桂桌面轻量高效，适合各种设备使用，而星火应用市场则为我们提供了丰富的软件资源。
